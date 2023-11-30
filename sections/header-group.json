@@ -32,7 +32,7 @@
         "span {font-size: 16px; line-height: 16px; font-weight: bold; color: #26358a;}",
         "svg {color: #26358a;}",
         "#HeaderMenu-MenuList-1 {border-radius: 10px;}",
-        ".header__search {opacity: 0;}"
+        ".header__search {opacity: 0; user-select: none; pointer-events: none;}"
       ],
       "settings": {
         "logo_position": "middle-left",
