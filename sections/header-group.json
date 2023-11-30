@@ -31,7 +31,8 @@
       "custom_css": [
         "span {font-size: 16px; line-height: 16px; font-weight: bold; color: #26358a;}",
         "svg {color: #26358a;}",
-        "#HeaderMenu-MenuList-1 {border-radius: 10px;}"
+        "#HeaderMenu-MenuList-1 {border-radius: 10px;}",
+        ".header__search {opacity: 0;}"
       ],
       "settings": {
         "logo_position": "middle-left",
