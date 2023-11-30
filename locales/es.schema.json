@@ -1,4 +1,7 @@
 {
+  "aloe":{ 
+    "notChange": "notChange"
+  },
   "settings_schema": {
     "colors": {
       "name": "Colores",

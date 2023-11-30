@@ -1,0 +1,7 @@
+development:
+  password: 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
+  theme_id: "155954217309"
+  store: everyseangleday.myshopify.com
+  ignore_files:
+    - config/settings_data.json
+    - templates/*.json

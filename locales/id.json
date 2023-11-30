@@ -1,4 +1,7 @@
 {
+  "aloe":{ 
+    "notChange": "notChange"
+  },
   "general": {
     "password_page": {
       "login_form_heading": "Masuki toko dengan sandi:",

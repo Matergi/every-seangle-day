@@ -1,0 +1,20 @@
+{
+    "name": "shopify-custom-theme",
+    "version": "1.0.0",
+    "description": "",
+    "main": "",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "sync": "npx browser-sync start --proxy=\"https://matergi.myshopify.com\" --files /tmp/theme.update --config bs-config.js --reload-delay 1000",
+      "watch": "theme watch --allow-live --notify=/tmp/theme.update",
+      "build": "PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]') && npx bestzip ./build/custom_theme_$PACKAGE_VERSION.zip assets/ config/ layout/ locales/ sections/ snippets/ templates/"
+    },
+    "author": "Giacomo Materozzi",
+    "license": "ISC",
+    "homepage": "https://github.com/Matergi/every-seangle-day#readme",
+    "dependencies": {
+      "bestzip": "^2.2.0",
+      "browser-sync": "^2.27.1"
+    },
+    "devDependencies": {}
+  }

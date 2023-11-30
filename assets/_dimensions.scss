@@ -1,0 +1,58 @@
+@import './_variables.scss';
+
+@media screen and (max-width: $mobile) {
+  .d-mobile {
+    display: flex;
+  }
+  .d-tablet {
+    display: none;
+  }
+  .d-desktop {
+    display: none;
+  }
+  .d-desktop-lg {
+    display: none;
+  }
+}
+@media screen and (min-width: ($mobile - 1)) and (max-width: $tablet) {
+  .d-mobile {
+    display: none;
+  }
+  .d-tablet {
+    display: flex;
+  }
+  .d-desktop {
+    display: none;
+  }
+  .d-desktop-lg {
+    display: none;
+  }
+}
+@media screen and (min-width: ($tablet - 1)) and (max-width: $desktop) {
+  .d-mobile {
+    display: none;
+  }
+  .d-tablet {
+    display: none;
+  }
+  .d-desktop {
+    display: flex;
+  }
+  .d-desktop-lg {
+    display: none;
+  }
+}
+@media screen and (min-width: ($desktop - 1)) {
+  .d-mobile {
+    display: none;
+  }
+  .d-tablet {
+    display: none;
+  }
+  .d-desktop {
+    display: none;
+  }
+  .d-desktop-lg {
+    display: flex;
+  }
+}

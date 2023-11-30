@@ -1,4 +1,7 @@
 {
+  "aloe":{ 
+    "notChange": "notChange"
+  },
   "general": {
     "password_page": {
       "login_form_heading": "Είσοδος στο κατάστημα με τη χρήση κωδικού πρόσβασης:",

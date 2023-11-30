@@ -105,15 +105,40 @@
     "name": "t:settings_schema.typography.name",
     "settings": [
       {
-        "type": "header",
-        "content": "t:settings_schema.typography.settings.header__1.content"
+        "type": "text",
+        "id": "font_family",
+        "default": "Helvetica neue",
+        "label": "Font family"
       },
       {
-        "type": "font_picker",
-        "id": "type_header_font",
-        "default": "assistant_n4",
-        "label": "t:settings_schema.typography.settings.type_header_font.label",
-        "info": "t:settings_schema.typography.settings.type_header_font.info"
+        "type": "text",
+        "id": "font_style",
+        "default": "regular",
+        "label": "Font style"
+      },
+      {
+        "type": "text",
+        "id": "font_weight",
+        "default": "regular",
+        "label": "Font weight"
+      },
+      {
+        "type": "text",
+        "id": "font_size_desktop",
+        "default": "62.5%",
+        "label": "Desktop font size default (62.5% -> 1em = 10px)"
+      },
+      {
+        "type": "text",
+        "id": "font_size_tablet",
+        "default": "62.5%",
+        "label": "Tablet font size default (62.5% -> 1em = 10px)"
+      },
+      {
+        "type": "text",
+        "id": "font_size_mobile",
+        "default": "62.5%",
+        "label": "Mobile font size default (62.5% -> 1em = 10px)"
       },
       {
         "type": "range",
@@ -127,24 +152,158 @@
       },
       {
         "type": "header",
-        "content": "t:settings_schema.typography.settings.header__2.content"
+        "content": "font-size, line-height, letter-spacing, color, font-weight, font-style",
+        "info": "1em = 10px"
       },
       {
-        "type": "font_picker",
-        "id": "type_body_font",
-        "default": "assistant_n4",
-        "label": "t:settings_schema.typography.settings.type_body_font.label",
-        "info": "t:settings_schema.typography.settings.type_body_font.info"
+        "type": "text",
+        "id": "theme_style_cta",
+        "default": "1.8em, 1em, 0px, #000000",
+        "label": "theme-style-cta"
       },
       {
-        "type": "range",
-        "id": "body_scale",
-        "min": 100,
-        "max": 130,
-        "step": 5,
-        "unit": "%",
-        "label": "t:settings_schema.typography.settings.body_scale.label",
-        "default": 100
+        "type": "text",
+        "id": "theme_style_big_title",
+        "default": "7em, 1em, 0px, #000000",
+        "label": "theme-style-big-title"
+      },
+      {
+        "type": "checkbox",
+        "id": "theme_style_big_title_bold_debug",
+        "default": false,
+        "label": "[Debug] theme-style-big-title"
+      },
+      {
+        "type": "text",
+        "id": "theme_style_text_h1",
+        "default": "9em, 1em, 0px, #000000",
+        "label": "theme-style-text-h1"
+      },
+      {
+        "type": "checkbox",
+        "id": "theme_style_text_h1_debug",
+        "default": false,
+        "label": "[Debug] theme-style-text-h1"
+      },
+      {
+        "type": "text",
+        "id": "theme_style_text_h2",
+        "default": "4em, 1em, 0px, #000000",
+        "label": "theme-style-text-h2"
+      },
+      {
+        "type": "checkbox",
+        "id": "theme_style_text_h2_debug",
+        "default": false,
+        "label": "[Debug] theme-style-text-h2"
+      },
+      {
+        "type": "text",
+        "id": "theme_style_text_h3",
+        "default": "2.3em, 1em, 0px, #000000",
+        "label": "theme-style-text-h3"
+      },
+      {
+        "type": "checkbox",
+        "id": "theme_style_text_h3_debug",
+        "default": false,
+        "label": "[Debug] theme-style-text-h3"
+      },
+      {
+        "type": "text",
+        "id": "theme_style_text_h4",
+        "default": "1.7em, 1em, 0px, #000000",
+        "label": "theme-style-text-h4"
+      },
+      {
+        "type": "checkbox",
+        "id": "theme_style_text_h4_debug",
+        "default": false,
+        "label": "[Debug] theme-style-text-h4"
+      },
+      {
+        "type": "text",
+        "id": "theme_style_text_h5",
+        "default": "1.4em, 1em, 0px, #000000",
+        "label": "theme-style-text-h5"
+      },
+      {
+        "type": "checkbox",
+        "id": "theme_style_text_h5_debug",
+        "default": false,
+        "label": "[Debug] theme-style-text-h5"
+      },
+      {
+        "type": "text",
+        "id": "theme_style_text_h6",
+        "default": "1.1em, 1em, 0px, #000000",
+        "label": "theme-style-text-h6"
+      },
+      {
+        "type": "checkbox",
+        "id": "theme_style_text_h6_debug",
+        "default": false,
+        "label": "[Debug] theme-style-text-h6"
+      },
+      {
+        "type": "text",
+        "id": "theme_style_text_h7",
+        "default": "0.8em, 1em, 0px, #000000",
+        "label": "theme-style-text-h7"
+      },
+      {
+        "type": "checkbox",
+        "id": "theme_style_text_h7_debug",
+        "default": false,
+        "label": "[Debug] theme-style-text-h7"
+      },
+      {
+        "type": "text",
+        "id": "theme_style_text_h8",
+        "default": "0.8em, 1em, 0px, #000000",
+        "label": "theme-style-text-h8"
+      },
+      {
+        "type": "checkbox",
+        "id": "theme_style_text_h8_debug",
+        "default": false,
+        "label": "[Debug] theme-style-text-h8"
+      },
+      {
+        "type": "text",
+        "id": "theme_style_text_h9",
+        "default": "0.8em, 1em, 0px, #000000",
+        "label": "theme-style-text-h9"
+      },
+      {
+        "type": "checkbox",
+        "id": "theme_style_text_h9_debug",
+        "default": false,
+        "label": "[Debug] theme-style-text-h9"
+      },
+      {
+        "type": "text",
+        "id": "theme_style_text_h10",
+        "default": "0.8em, 1em, 0px, #000000",
+        "label": "theme-style-text-h10"
+      },
+      {
+        "type": "checkbox",
+        "id": "theme_style_text_h10_debug",
+        "default": false,
+        "label": "[Debug] theme-style-text-h10"
+      },
+      {
+        "type": "text",
+        "id": "theme_style_text_cta",
+        "default": "1.8em, 1em, 0px, #000000",
+        "label": "theme-style-text-cta"
+      },
+      {
+        "type": "checkbox",
+        "id": "theme_style_text_cta_debug",
+        "default": false,
+        "label": "[Debug] theme-style-text-cta"
       }
     ]
   },

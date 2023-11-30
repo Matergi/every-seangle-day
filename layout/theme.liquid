@@ -280,6 +280,109 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+
+    <!-- EVERY SEANGLE DAY [START] -->
+      <script src="{{ 'lazysizes.js' | asset_url }}" async="async"></script>
+      <script src="{{ 'jquery.min.js' | asset_url }}" defer="defer"></script>
+
+      <!-- Lib external -->
+      <script src="{{ 'owl.carousel.min.js' | asset_url }}" defer="defer"></script>
+      <link rel="stylesheet" href={{ 'glide.core.min.css' | asset_url }}>
+      <link rel="stylesheet" href={{ 'glide.theme.min.css' | asset_url }}>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+      <script src="{{ 'tiny-slider.js' | asset_url }}"></script>
+      <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/reefjs@8/dist/reef.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.4/fabric.min.js" integrity="sha512-XcwgBTqf2CXR/nsswCV1e0j9CjXo87APyBsATK2/l7MvTpcIG0QYKA87v5KIJ4RS6ytArv2pWD6UcRorKhYp1A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js" integrity="sha512-2fk3Q4NXPYAqIha0glLZ2nluueK43aNoxvijPf53+DgL7UW9mkN+uXc1aEmnZdkkZVvtJZltpRt+JqTWc3TS3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+      <!-- Lib -->
+      <script src="{{ 'lib-format-tag.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'lib-global.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'lib-scroll.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'lib-mask.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'lib-collapsible.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'anime.min.js' | asset_url }}"></script>
+
+      <!-- Project Lib -->
+      <script src="{{ 'project-lib-we-are-guardians.js' | asset_url }}" defer="defer"></script>
+
+      <!-- Style -->
+      {{ 'owl.carousel.min.css' | asset_url | stylesheet_tag }}
+      <link type="text/css" href="{{ 'style-global.scss.css' | asset_url }}" rel="stylesheet">
+      <link type="text/css" href="{{ 'style-global.css' | asset_url }}" rel="stylesheet">
+      <link type="text/css" href="{{ '_dimensions.scss.css' | asset_url }}" rel="stylesheet">
+      <link type="text/css" href="{{ '_variables.scss.css' | asset_url }}" rel="stylesheet">
+      <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
+      <style>
+        {{ shop.metafields.global.css }}
+        @font-face {
+          font-family: "Mermaid";
+          src: url('{{ "Mermaid1001" | asset_url }}') format("ttf");
+        }
+      </style>
+      <style>
+        {{ shop.metafields.chips.styles }}
+      </style>
+      <script>
+        window["getStyle"] = (id) => {
+          let data = id.split(",");
+          const myStyles = {
+            "desktop_all": "{{ settings.desktop_all }}",
+            "desktop_all_with_bottom": "{{ settings.desktop_all_with_bottom }}",
+            "desktop_top": "{{ settings.desktop_top }}",
+            "desktop_child": "{{ settings.desktop_child }}",
+            "desktop_left_right": "{{ settings.desktop_left_right }}",
+            "desktop_max_width_section": "{{ settings.desktop_max_width_section }}",
+
+            "tablet_all": "{{ settings.tablet_all }}",
+            "tablet_all_with_bottom": "{{ settings.tablet_all_with_bottom }}",
+            "tablet_top": "{{ settings.tablet_top }}",
+            "tablet_child": "{{ settings.tablet_child }}",
+
+            "mobile_all": "{{ settings.mobile_all }}",
+            "mobile_all_with_bottom": "{{ settings.mobile_all_with_bottom }}",
+            "mobile_top": "{{ settings.mobile_top }}",
+            "mobile_child": "{{ settings.mobile_child }}"
+          }
+
+          if (myStyles[data[0]]) {
+            if (data[1]) {
+              return `calc(${
+                myStyles[data[0]]
+              } ${
+                window["decodeHTMLEntities"](data[1])
+              })`;
+            }
+
+            return myStyles[data[0]];
+          }
+
+          return id;
+        }
+      </script>
+
+      <!-- Sound -->
+      <script>
+        window['load-allsound'] = async () => {
+          const jsonstring = `{{ shop.metafields.global.sound }}`;
+          console.log(jsonstring);
+          const props = JSON.parse(jsonstring);
+          Object.keys(props).forEach(key => {
+            window[`lib-sound.${key}`] = new Audio(props[key]);
+          })
+        };
+        $(document).ready(function() {
+          setTimeout(() => {
+            window['load-allsound']();
+          }, 1000);
+        })
+      </script>
+    <!-- EVERY SEANGLE DAY [END] -->
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">

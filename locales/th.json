@@ -1,4 +1,7 @@
 {
+  "aloe":{ 
+    "notChange": "notChange"
+  },
   "general": {
     "password_page": {
       "login_form_heading": "เข้าสู่ร้านค้าโดยใช้รหัสผ่าน:",
